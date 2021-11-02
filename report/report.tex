@@ -60,7 +60,9 @@ See Table~\ref{table:floating-table} for a floating table and
 
 
 
-\chapter{Forward Kinematics - Task 1}
+\chapter{Forward Kinematics}
+\section{Task 1}
+
 Denavit-Hartenberg (DH) is a convention broadly used in robotics. It was introduced in order to standardize the attachmemt of cordinate frames to robots. A robot can be seen as a kinematic chain of rigid bodies. These rigid bodies are called links and are connected with joints. A robot arm is represenetd by a kinematic chain which is a concatenation of several links and joints. If one object is manipulated by one robot the system is called open kinematic chain. If several robots manipulate one object simultanously the system is called closed kinematic chain. In this task we will focus on open chain robots. Forward kinematics is a way of of calculating the end effector pose based on the joint parameters. The relation from the end effector to the base is done by attaching one frame to the end effector and one to the base of the robot. The relation between those two frames is then determined by the homogenious transformation matrix \(T_{E}^{B}\). To make things easier a frame can be attached to each link and then the relation between each consecutive frame can be calculated by \(T_{i+1}^{i}\). Concatenating all these homogenious Transformations and building their dot product determines the homogenious Transformation from the robot base to end effector: 
 \begin{equation}
   T_{E}^{B} = T_{0}^{1}*T_{1}^{2}* ... *T_{i-1}^{i}
@@ -72,27 +74,27 @@ Denavit-Hartenberg (DH) is a convention which standardizes the attachmemt of cor
   \item[1] \(z_{i}\) alligns with the rotational axis of joint i+1
   \item[2] \(O_{i}\) is placed at the intersetion of \(z_{i}\) and the common normal of \(z_{i-1}\) and \(z_{i}\) 
   \item[3] \(O_{i'}\) is placed at the intersetion of \(z_{i-1}\) and the common normal of \(z_{i-1}\) and \(z_{i}\)
-  \item[4] \(x_{i}\) alligns with the common normal of \(z_{i-1}\) and \(z_{i}\) pointing away from \(O_{i'}\)
-  \item[5] \(y_{i}\) is chosen according to the right hand rule
+  \item[4] \(x_{i}\) alligns with the common normal of \(z_{i-1}\) and \(z_{i}\) pointing away from \(O_{i}\)
+  \item[5] \(y_{i}\) is chosen according to the right hand rule for coordinate frames
   \end{itemize}
 \begin{figure}
   \centering
   \includegraphics[width=0.8\textwidth]{assets/Denavit_Hartenberg_Convention_Rules.pdf} 
-  \caption{Denavit Hartenberg convention rules}
+  \caption{Denavit Hartenberg convention rules \cite{Siciliano2009}}
   \label{fig:Denavit_Hartenberg_Konvention_Rules}
 \end{figure}
 
 The DH convention does not define enough rules to make sure that there is just one uniquie solution. 
 
 \begin{itemize}
-  \item[1] There is no frame i-1 for frame 0 we can not define \(O_{i}\) and \(x_{0}\):  \(O_{i}\) and \(x_{0}\) can be defined arbitrarily.
-  \item[2] There is no joint i+1 when defining frame n we can not define \(z_{i}\): \(z_{i}\) is defined parallel to \(z_{i-1}\) . 
+  \item[1] There is no frame i-1 for frame 0 we can not define \(O_{0}\) and \(x_{0}\):  \(O_{0}\) and \(x_{0}\) can be defined arbitrarily.
+  \item[2] There is no joint i+1 when defining frame n we can not define \(z_{n}\): \(z_{n}\) is defined parallel to \(z_{n-1}\) . 
 \end{itemize}  Usually there are some ways of defining those two parameters which make applying the convention easier.
 
 There are some special cases which also do not allow a unique definition of frames:
 \begin{itemize}
   \item[1] \(z_{i+1}\) and \(z_{i}\) are parallel: \(O_{i}\) and \(x_{i}\) can be selected arbitrarily.
-  \item[2] \(z_{i+1}\) and \(z_{i}\) are parallel: \(O_{i}\) and \(x_{i}\) can be selected arbitrarily.
+  \item[2] \(z_{i+1}\) and \(z_{i}\) intersect: \(O_{i}\) and \(x_{i}\) can be selected arbitrarily.
   \item[3] joint i is prismatic: \(x_{i-1}\) can be selected arbitrarily.
 \end{itemize}
 
@@ -119,6 +121,49 @@ Having the four parameters \(a_{i}\), \(d_{i}\), \(\alpha_{i}\), \(\vartheta_{i}
   \end{bmatrix}
   \label{eqn:Transformation_Denavit_Hartenberg}
 \end{equation}
+\cite{Siciliano2009}
+
+\section{Task 2}
+The modified DH convention presented in \cite{Lynch2017} differs to the original DH presented in \cite{Siciliano2009}. The frames are attached to the links differntly (see table \ref{table:frame_attachment_DH}). Getting the DH parameters from the attached frames therefore also differs (see table \ref{table:DH_parameters}). Like mentioned before the attachment of the frames does not change the forward dynamics. Anyway, sticking with one convention makes calculatations more intuitive and easier to understand for others.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{assets/Denavit_Hartenberg_Convention_Rules_Modified.pdf} 
+  \caption{Modified Denavit Hartenberg convention rules \cite{Lynch2017}}
+  \label{fig:Denavit_Hartenberg_Konvention_Rules}
+\end{figure}
+
+In the following passage the differences in the frame attachement are presented.
+
+\begin{table}
+  \centering
+  \begin{tabular}{l|lll}
+    \vtop{\hbox{\strut frame }\hbox{\strut parameters }} & original DH & modified DH \\
+    \hline
+    \(z_{i}\) & \vtop{\hbox{\strut alligns with the rotational axis}\hbox{\strut of joint i+1}} & \vtop{\hbox{\strut alligns with the rotational axis}\hbox{\strut of joint i}} \\
+    \(O_{i}\) & \vtop{\hbox{\strut is placed at the intersetion of \(z_{i}\) }\hbox{\strut and the common normal of \(z_{i-1}\) and \(z_{i}\)}} &  \vtop{\hbox{\strut is placed at the intersetion of \(z_{i}\) }\hbox{\strut and the common normal of \(z_{i}\) and \(z_{i+1}\)}}\\
+    \(x_{i}\) & \vtop{\hbox{\strut alligns with the common normal of }\hbox{\strut \(z_{i-1}\) and \(z_{i}\) pointing away from \(O_{i}\) }} & \vtop{\hbox{\strut alligns with the common normal of }\hbox{\strut \(z_{i+1}\) and \(z_{i}\) and pointing away from \(O_{i}\) }}\\
+  \end{tabular}
+  \caption{frame attachment original versus modified DH}
+  \label{table:frame_attachment_DH}
+\end{table}
+
+
+\begin{table}
+  \centering
+  \begin{tabular}{l|lll}
+    \vtop{\hbox{\strut DH }\hbox{\strut paramters }} & original DH & modified DH \\
+    \hline
+    \(a_{i}\)& length of common normal of \(z_{i-1}\) and \(z_{i}\) & length of common normal of \(z_{i}\) and \(z_{i+1}\) \\
+    \(d_{i}\) &  \vtop{\hbox{\strut distance between \(O_{i-1}\) and intersection of }\hbox{\strut common normal of \(z_{i-1}\) and \(z_{i}\) with \(z_{i-1}\)}} &  \vtop{\hbox{\strut distance between \(O_{i}\) and intersection of }\hbox{\strut common normal of \(z_{i-1}\) and \(z_{i}\)  with \(z_{i}\)}}\\
+    \(\alpha_{i}\) & angle between \(z_{i-1}\) and \(z_{i}\) about \(x_{i}\) &  angle between \(z_{i-1}\) and  \(z_{i}\) about \(x_{i-1}\) \\
+    \(\vartheta{i}\) & angle between \(x_{i-1}\) and \(x_{i}\) about \(z_{i-1}\)  &  angle between \(x_{i-1}\) and \(x_{i}\) about \(z_{i}\) \\
+  \end{tabular}
+  \caption{DH parameter original versus modified DH}
+  \label{table:DH_parameters}
+\end{table}
+
+
 \chapter{Here Comes Chapter 2}
 
 \Blindtext
