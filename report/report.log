@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.4)  3 NOV 2021 16:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.4)  3 NOV 2021 21:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -803,7 +803,7 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 10.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
@@ -813,27 +813,27 @@ File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 ) (/Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-Package scrbase Info: activating english \contentsname on input line 10.
-Package scrbase Info: activating english \listfigurename on input line 10.
-Package scrbase Info: activating english \listtablename on input line 10.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+Package scrbase Info: activating english \contentsname on input line 11.
+Package scrbase Info: activating english \listfigurename on input line 11.
+Package scrbase Info: activating english \listtablename on input line 11.
 
 isodate: babel.sty has been loaded
 (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -879,8 +879,8 @@ Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'report.bbl' found.
  (/Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/report.bbl)
-Package biblatex Info: Reference section=0 on input line 10.
-Package biblatex Info: Reference segment=0 on input line 10.
+Package biblatex Info: Reference section=0 on input line 11.
+Package biblatex Info: Reference segment=0 on input line 11.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -923,7 +923,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 )
-Package hyperref Info: Link coloring ON on input line 10.
+Package hyperref Info: Link coloring ON on input line 11.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/local/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty
@@ -933,9 +933,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count459
 )
-LaTeX Info: Redefining \ref on input line 10.
-LaTeX Info: Redefining \pageref on input line 10.
-LaTeX Info: Redefining \nameref on input line 10.
+LaTeX Info: Redefining \ref on input line 11.
+LaTeX Info: Redefining \pageref on input line 11.
+LaTeX Info: Redefining \nameref on input line 11.
  (/Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/report.out) (/Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/report.out)
 \@outlinefile=\write4
 \openout4 = `report.out'.
@@ -947,40 +947,40 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           `bookmarkpackage=false' before \begin{document} and
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
-(scrbook)           before \begin{document} on input line 10.
+(scrbook)           before \begin{document} on input line 11.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
  (/usr/local/texlive/2021/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
 \BKM@id=\count460
 ))
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 13.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 14.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 13.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 14.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 13.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 14.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 13.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 14.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 13.
+(Font)              <17.28> on input line 14.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 13.
+(Font)              <12> on input line 14.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 13.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 13.
+(Font)              <10> on input line 14.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 14.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 13.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 14.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -992,9 +992,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 18.
+(Font)              <8> on input line 19.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 18.
+(Font)              <6> on input line 19.
  [1
 
 
@@ -1027,14 +1027,14 @@ chapter 1.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.63 \chapter
+l.64 \chapter
              {Forward Kinematics} [1
 
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.63 \chapter
+l.64 \chapter
              {Forward Kinematics} [2
 
 
@@ -1043,80 +1043,87 @@ chapter 2.
 [3]
 
 pdfTeX warning: pdflatex (file /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/Denavit_Hartenberg_Convention_Rules.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<assets/Denavit_Hartenberg_Convention_Rules.pdf, id=138, 716.6775pt x 454.69875pt>
+<assets/Denavit_Hartenberg_Convention_Rules.pdf, id=140, 716.6775pt x 454.69875pt>
 File: assets/Denavit_Hartenberg_Convention_Rules.pdf Graphic file (type pdf)
 <use assets/Denavit_Hartenberg_Convention_Rules.pdf>
-Package pdftex.def Info: assets/Denavit_Hartenberg_Convention_Rules.pdf  used on input line 82.
+Package pdftex.def Info: assets/Denavit_Hartenberg_Convention_Rules.pdf  used on input line 83.
 (pdftex.def)             Requested size: 364.19672pt x 231.06764pt.
 [4 </Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/Denavit_Hartenberg_Convention_Rules.pdf>]
 
 pdfTeX warning: pdflatex (file /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/Denavit_Hartenberg_Convention_Rules_Modified.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<assets/Denavit_Hartenberg_Convention_Rules_Modified.pdf, id=152, 849.1725pt x 556.22092pt>
+<assets/Denavit_Hartenberg_Convention_Rules_Modified.pdf, id=154, 849.1725pt x 556.22092pt>
 File: assets/Denavit_Hartenberg_Convention_Rules_Modified.pdf Graphic file (type pdf)
 <use assets/Denavit_Hartenberg_Convention_Rules_Modified.pdf>
-Package pdftex.def Info: assets/Denavit_Hartenberg_Convention_Rules_Modified.pdf  used on input line 131.
+Package pdftex.def Info: assets/Denavit_Hartenberg_Convention_Rules_Modified.pdf  used on input line 132.
 (pdftex.def)             Requested size: 364.19672pt x 238.55075pt.
 
-Overfull \hbox (41.99461pt too wide) in paragraph at lines 140--147
+Overfull \hbox (41.99461pt too wide) in paragraph at lines 141--148
  [][] 
  []
 
 
-Overfull \hbox (60.25061pt too wide) in paragraph at lines 154--162
+Overfull \hbox (60.25061pt too wide) in paragraph at lines 155--163
  [][] 
  []
 
 [5 </Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/Denavit_Hartenberg_Convention_Rules_Modified.pdf>]
 
 pdfTeX warning: pdflatex (file /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/Twist.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<assets/Twist.pdf, id=167, 825.0825pt x 478.78876pt>
+<assets/Twist.pdf, id=169, 825.0825pt x 478.78876pt>
 File: assets/Twist.pdf Graphic file (type pdf)
 <use assets/Twist.pdf>
-Package pdftex.def Info: assets/Twist.pdf  used on input line 199.
+Package pdftex.def Info: assets/Twist.pdf  used on input line 200.
 (pdftex.def)             Requested size: 318.66953pt x 184.92235pt.
 [6] [7 </Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/Twist.pdf>]
 
 pdfTeX warning: pdflatex (file /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/PoE_Visualization.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<assets/PoE_Visualization.pdf, id=187, 848.58969pt x 516.3808pt>
+<assets/PoE_Visualization.pdf, id=190, 848.58969pt x 516.3808pt>
 File: assets/PoE_Visualization.pdf Graphic file (type pdf)
 <use assets/PoE_Visualization.pdf>
-Package pdftex.def Info: assets/PoE_Visualization.pdf  used on input line 233.
+Package pdftex.def Info: assets/PoE_Visualization.pdf  used on input line 246.
 (pdftex.def)             Requested size: 318.66953pt x 193.91809pt.
-[8 </Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/PoE_Visualization.pdf>] [9] [10
+[8 </Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/PoE_Visualization.pdf>]
+
+LaTeX Warning: Reference `eqn:homogeniious_transformation_DH_part4' on page 9 undefined on input line 291.
+
+[9] [10] [11] [12
 
 
 ]
 chapter 3.
-[11]
-<hovedlogo.png, id=210, 426.8748pt x 141.1674pt>
+[13]
+<hovedlogo.png, id=241, 426.8748pt x 141.1674pt>
 File: hovedlogo.png Graphic file (type png)
 <use hovedlogo.png>
-Package pdftex.def Info: hovedlogo.png  used on input line 255.
+Package pdftex.def Info: hovedlogo.png  used on input line 342.
 (pdftex.def)             Requested size: 227.62209pt x 75.27501pt.
- [12 </Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/hovedlogo.png>]
+ [14 </Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/hovedlogo.png>]
 chapter 4.
-[13
+[15
 
 
 ]
 File: hovedlogo.png Graphic file (type png)
 <use hovedlogo.png>
-Package pdftex.def Info: hovedlogo.png  used on input line 275.
+Package pdftex.def Info: hovedlogo.png  used on input line 362.
 (pdftex.def)             Requested size: 227.62209pt x 75.27501pt.
- [14]
+ [16]
 chapter 5.
-[15
+[17
 
 
-] [16
+] [18
 
 
-] [17] [18
+] [19] [20
 
 
 ]
 chapter A.
-[19] (/Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/report.aux)
+[21] (/Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/report.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'report.run.xml'.
@@ -1124,18 +1131,18 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23271 strings out of 478994
- 440462 string characters out of 5858184
- 1362970 words of memory out of 5000000
- 40369 multiletter control sequences out of 15000+600000
+ 23300 strings out of 478994
+ 441162 string characters out of 5858184
+ 1363874 words of memory out of 5000000
+ 40383 multiletter control sequences out of 15000+600000
  449860 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,20n,130p,10708b,2520s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "/Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/report.pdf" (29 pages, 589787 bytes).
+Output written on "/Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/report.pdf" (31 pages, 599949 bytes).
 PDF statistics:
- 373 PDF objects out of 1000 (max. 8388607)
- 310 compressed objects within 4 object streams
- 67 named destinations out of 1000 (max. 500000)
- 162 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 411 PDF objects out of 1000 (max. 8388607)
+ 346 compressed objects within 4 object streams
+ 82 named destinations out of 1000 (max. 500000)
+ 170 words of extra memory for PDF output out of 10000 (max. 10000000)
 

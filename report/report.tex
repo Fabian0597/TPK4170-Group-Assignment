@@ -4,6 +4,7 @@
 \author{Author(s)}
 
 \usepackage{blindtext}
+\usepackage{amsmath}
 
 \addbibresource{references.bib} 
 
@@ -211,6 +212,18 @@ Applying the matrix exponential to \( w \dot{\theta}\) the corresponding rotatio
 
 In the next section the PoE formula is presented for solving the forward kinematics for compelex open chain robots. The homogenious transformations between links is caclulated with the matrix exponential of screw motions. In this sense, it is important to the concept of matrix logarithm and exponential of twists. 
 
+\subsection{Change of reference frame - Twists}
+The same twists can be represented in different reference frames. The relation between those two representations is the following: 
+\begin{equation}
+   [S_{b}]= T_{a}^{b}[S_{a}]T_{b}^{a}
+  \label{eqn:Twist_relation}
+\end{equation}
+Also the notation of the adjoint mapping is common: 
+\begin{equation}
+  [S_{b}]= Ad_{T_{a}^{b}}[S_{a}]
+ \label{eqn:Twist_relation_2}
+\end{equation}
+
 \subsection{Power of Exponentials formulation}
 In comparison to DH convention in the Product of Exponential Formula (POE Formula) there is no convention for attaching a frame to each link. It is just necessary to attach a frame at a stationary point and the end effector. The rotation of each joint i is represented by a screw motion which influences all links between joint i and end effector. When the robot is in its zero position and one does just move the last joint with \(\theta_{n}\), the end effector pose is represented by \(T = e^{[S_{n}]\theta_{n}} M\). In contrast when moving the last two joints \(\theta_{n}\) and \(\theta_{n-1}\), the end effector pose is represented by \(T = e^{[S_{n-1}]\theta_{n-1}} e^{[S_{n}]\theta_{n}} M\). This is what figure \ref{fig:PoE_Visualization} shows. M is a homogenious transformation representing the end effector frame relative to the base frame when the robot is in it's home position. \(S_{i}\) is the screw axis of each joint i when the robot is in its home position This screw axis can be represented in the fixed space frame or end effector frame. The first PoE formula is called spatial form of the Power-of-Exponentials formulations. The second PoE formula is called body form of the Power-of-Exponentials formulations. The homogenious transformation representing the end effector relative to the base frame in the fixed space frame: 
 
@@ -238,6 +251,80 @@ The screw motion of a joint i just impacts the pose of the the joints i+1 to end
 \section{Task 4}
 
 \subsection{Relation between DH-convention and PoE formula}
+When using the DH-convention, the relative motion between two links is represented by four parameters \(a_{i}, d_{i}, \alpha_{i}, \vartheta{i}\). The homogenious transformation between two links can be writen as follwing: 
+\begin{equation}
+  T_{i}^{i-1} = Rot(\hat{x}, \alpha_{i-1}) Trans(\hat{x}, a_{i-1}) Trans(\hat{z}, d_{i})  Rot(\hat{z}, \phi_{i})
+  \label{eqn:homogeniious_transformation_DH}
+\end{equation}
+
+In the case of rotational joints the rotation around x and the translation along x and z is constant and can be written as following: 
+
+\begin{equation}
+  M_{i} = Rot(\hat{x}, \alpha_{i-1}) Trans(\hat{x}, a_{i-1}) Trans(\hat{z}, d_{i})
+  \label{eqn:homogenious_transformation_DH_part1}
+\end{equation}
+
+The screw axis of the joint is the following: 
+\begin{equation}
+  [A_{i}]
+  = 
+  \begin{bmatrix}
+    0 & -1 & 0 & 0\\
+    1 & 0 & 0 & 0\\
+    0 & 0 & 0 & 0\\
+    0 & 0 & 0 & 0
+  \end{bmatrix}
+  \label{eqn:homogenious_transformation_DH_part2}
+\end{equation}
+
+Applying the matrix exponential of \([A_{i}]\theta_{i}\) returns the homogenious transformation for the rotation around z:
+\begin{equation}
+  Rot(\hat{z}, \phi_{i}) = e^{[A_{i}]\theta_{i}}
+  \label{eqn:homogenious_transformation_DH_part3}
+\end{equation}
+
+The equations from equation \ref{eqn:homogenious_transformation_DH_part1}, \ref{eqn:homogenious_transformation_DH_part2} and \ref{eqn:homogenious_transformation_DH_part3} lead to the following homogenious transformation:
+\begin{equation}
+  T_{i}^{i-1} = M_{i}e^{[A_{i}]\theta_{i}}
+  \label{eqn:homogenious_transformation_DH_part4}
+\end{equation}
+Concatenating equation \ref{eqn:homogeniious_transformation_DH_part4} for all links in the open chain solves the forward kinematics: 
+\begin{equation}
+  T_{n}^{0} = M_{1}e^{[A_{1}]\theta_{1}} M_{2}e^{[A_{2}]\theta_{2}} ... M_{n-1}e^{[A_{n-1}]\theta_{n-1}} M_{n}e^{[A_{n}]\theta_{n}}
+  \label{eqn:homogenious_transformation_DH_part5}
+\end{equation}
+By rearanging the following matrix identity \(M e^{P} M^{-1} = e^{MPM^{-1}}\) to \(M e^{P} = e^{MPM^{-1}} M\) we can rewrite equation \ref{eqn:homogenious_transformation_DH_part4} to:
+\begin{equation}
+  T_{i}^{i-1} = e^{M_{i}[A_{i}]\theta_{i}M_{i}^{-1}}M_{i}
+  \label{eqn:homogenious_transformation_DH_part6}
+\end{equation}
+Applying equation \ref{eqn:homogenious_transformation_DH_part6} to \ref{eqn:homogenious_transformation_DH_part5}:
+
+
+
+
+\begin{equation} \label{eqn:homogenious_transformation_DH_part7}
+  \begin{split}
+    T_{0}^{n} &=  e^{M_{1}[A_{1}]M_{1}^{-1}\theta_{1}} (M_{1}M_{2}) e^{[A_{2}]\theta_{2}} ... M_{n-1}e^{[A_{n-1}]\theta_{n-1}} M_{n}e^{[A_{n}]\theta_{n}} \\
+       & = e^{M_{1}[A_{1}]M_{1}^{-1}\theta_{1}} e^{(M_{1}M_{2})[A_{2}](M_{1}M_{2})^{-1}\theta_{2}} (M_{1}M_{2}M_{3})e^{[A_{3}]\theta_{3}} ... M_{n}e^{[A_{n}]\theta_{n}} \\
+       &= e^{[S_{1}]\theta_{1}} e^{[S_{2}]\theta_{2}} ... e^{[S_{n}]\theta_{n}}M
+  \end{split}
+  \end{equation}
+
+  where 
+  \begin{equation}
+    [S_{i}] = (M_{1}...M_{i-1})[A_{n}](M_{1}...M_{i-1})^{-1}
+    \label{eqn:homogenious_transformation_DH_part8}
+  \end{equation}
+  \begin{equation}
+    M = M_{1}M_{2}...M_{n}
+    \label{eqn:homogenious_transformation_DH_part9}
+  \end{equation}
+
+
+From equation \ref{eqn:Twist_relation} and \ref{eqn:Twist_relation_2} we know that the same Twist can be represented in different reference frames. \(A_{i}\) is the screw axis of joint i in the i frame. It is obvious that \(S_{i}\) is the same screw axis as \(A_{i}\)  transformed into another frame. The srew axis of joint 1 is transformed by \(M_{1}\), whereas the screw axis of joint i is transformed by \(M_{1}...M_{i-1}\). \(S_{i}\). This means that the screw axis of all joints are transformed from the local joint frames \(A_{i}\) into the base frame \(S_{i}\). After using the DH-convention to attach frames to each link, applying the matrix exponential to generate the homogenious transformation between consecutive frames in equation \ref{eqn:homogenious_transformation_DH_part3}, changing the reference frame of each joint screw axis into the base frame and multiplying the homogenious transformations between consecutive joints we end up with the PoE formula.
+
+
 \subsection{DH-convention vs PoE formula - advantages and disadvanteges}
 In this section we try to elaborate the differences between the DH convention and the PoE formula. Both methods differ in several points and have advantages and disadvantages. The DH convention on the one hand has fixed rules to attach frames to joints. This might sometimes seem to be exhaustig. Especially for complex robots with a lot of links it can become a tedious work. If all frames are attached properly one can easily find the homogenious transormations between all consecutive frames \(T_{1}^{0}\) to \(T_{n}^{n-1}\). Using the DH convention the homogenious transformations is established by using the minimal number of parameters to describe joint movements. The minimal number of parameters in the DH convention are  \(a_{i}, d_{i}, \alpha_{i}, \vartheta{i}\). These DH paramters can be used immediatlly to build the transformation matrix T. Multipling all these matrices returns the Transformation from base to end effector and the forward kinematics is solved. The easy establishment of the transformation matrix with the minimal number of parameters is the biggest advantage of the DH convention. Still there exist different DH conventions for attaching the frames to the links. This might sometimes be confusing. Another disadvatage is that the DH-parameters can become ill-conditioned. Especially in the special cases where consecutive joint axes are parallel or do intersect little changes in the robot geomety can make huge changes in the DH-parameters. Errors in manufacturing, CAD modells or in other areas can therefore lead to bigger problems. 
 
