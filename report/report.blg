@@ -1,15 +1,15 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
 [0] Config.pm:314> INFO - Logfile is '/Users/fabiankolb/Documents/UniversitÃ¤t/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/report.blg'
-[83] biber-darwin:340> INFO - === Tue Nov  2, 2021, 12:22:43
-[264] Biber.pm:415> INFO - Reading '/Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/report.bcf'
-[367] Biber.pm:952> INFO - Found 3 citekeys in bib section 0
-[380] Biber.pm:4340> INFO - Processing section 0
-[393] Biber.pm:4531> INFO - Looking for bibtex format file 'references.bib' for section 0
-[394] bibtex.pm:1689> INFO - LaTeX decoding ...
-[402] bibtex.pm:1494> INFO - Found BibTeX data source 'references.bib'
-[460] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[460] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[461] Biber.pm:4168> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[461] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
-[463] bbl.pm:654> INFO - Writing '/Users/fabiankolb/Documents/UniversitÃ¤t/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/report.bbl' with encoding 'UTF-8'
-[465] bbl.pm:757> INFO - Output to /Users/fabiankolb/Documents/UniversitÃ¤t/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/report.bbl
+[114] biber-darwin:340> INFO - === Wed Nov  3, 2021, 13:22:26
+[438] Biber.pm:415> INFO - Reading '/Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/report.bcf'
+[690] Biber.pm:952> INFO - Found 3 citekeys in bib section 0
+[720] Biber.pm:4340> INFO - Processing section 0
+[743] Biber.pm:4531> INFO - Looking for bibtex format file 'references.bib' for section 0
+[746] bibtex.pm:1689> INFO - LaTeX decoding ...
+[754] bibtex.pm:1494> INFO - Found BibTeX data source 'references.bib'
+[843] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[843] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[843] Biber.pm:4168> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[843] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[846] bbl.pm:654> INFO - Writing '/Users/fabiankolb/Documents/UniversitÃ¤t/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/report.bbl' with encoding 'UTF-8'
+[847] bbl.pm:757> INFO - Output to /Users/fabiankolb/Documents/UniversitÃ¤t/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/report.bbl

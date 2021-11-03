@@ -1067,6 +1067,17 @@ INPUT /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TP
 INPUT /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/Denavit_Hartenberg_Convention_Rules_Modified.pdf
 INPUT /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/Denavit_Hartenberg_Convention_Rules_Modified.pdf
 INPUT /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/Denavit_Hartenberg_Convention_Rules_Modified.pdf
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
+INPUT /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/Twist.pdf
+INPUT /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/Twist.pdf
+INPUT /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/Twist.pdf
+INPUT /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/Twist.pdf
+INPUT /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/Twist.pdf
+INPUT /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/PoE_Visualization.pdf
+INPUT /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/PoE_Visualization.pdf
+INPUT /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/PoE_Visualization.pdf
+INPUT /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/PoE_Visualization.pdf
+INPUT /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/PoE_Visualization.pdf
 INPUT /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/hovedlogo.png
 INPUT /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/hovedlogo.png
 INPUT /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/hovedlogo.png
@@ -1082,10 +1093,10 @@ INPUT /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TP
 INPUT /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/report.run.xml
 OUTPUT /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/report.run.xml
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmex10.pfb
@@ -1094,8 +1105,10 @@ INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmmi6.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmmi8.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr12.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr17.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr6.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr8.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmri12.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy10.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy6.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy8.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb

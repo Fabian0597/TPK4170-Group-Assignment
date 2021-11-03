@@ -2348,14 +2348,18 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="3">McCarthy2011</bcf:citekey>
-    <bcf:citekey order="4">Siciliano2009</bcf:citekey>
+    <bcf:citekey order="4">McCarthy2011</bcf:citekey>
     <bcf:citekey order="5">Siciliano2009</bcf:citekey>
     <bcf:citekey order="6">Siciliano2009</bcf:citekey>
-    <bcf:citekey order="7">Lynch2017</bcf:citekey>
-    <bcf:citekey order="8">Siciliano2009</bcf:citekey>
-    <bcf:citekey order="9">Lynch2017</bcf:citekey>
+    <bcf:citekey order="7">Siciliano2009</bcf:citekey>
+    <bcf:citekey order="8">Lynch2017</bcf:citekey>
+    <bcf:citekey order="9">Siciliano2009</bcf:citekey>
     <bcf:citekey order="10">Lynch2017</bcf:citekey>
+    <bcf:citekey order="11">Lynch2017</bcf:citekey>
+    <bcf:citekey order="12">Lynch2017</bcf:citekey>
+    <bcf:citekey order="13">Siciliano2009</bcf:citekey>
+    <bcf:citekey order="14">Lynch2017</bcf:citekey>
+    <bcf:citekey order="15">Lynch2017</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

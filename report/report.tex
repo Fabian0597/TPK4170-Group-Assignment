@@ -68,7 +68,7 @@ Denavit-Hartenberg (DH) is a convention broadly used in robotics. It was introdu
   T_{E}^{B} = T_{0}^{1}*T_{1}^{2}* ... *T_{i-1}^{i}
   \label{eqn:recursive_expression_homogenious_transformation}
 \end{equation}
-Denavit-Hartenberg (DH) is a convention which standardizes the attachmemt of cordinate frames to a robot. It is a convention broadly used in the community which makes the application of the recursive formula in \ref{eqn:recursive_expression_homogenious_transformation} more intuitive. The DH convention provides rules how to attach the frames to the link. In general the result should be the same if the frames are attached differently to the links as long as every link is considered. In the DH convention four different parameters afe used in order to attach frames to the robot links. The frame of the link i+1 is determined based on the frame of the link i. The placement of a frame is visulaized in \ref{fig:Denavit_Hartenberg_Konvention_Rules}. The followinfg consecutive rules are applied:
+Denavit-Hartenberg (DH) is a convention which standardizes the attachmemt of cordinate frames to a robot. It is a convention broadly used in the community which makes the application of the recursive formula in \ref{eqn:recursive_expression_homogenious_transformation} more intuitive. The DH convention provides rules how to attach the frames to the link. In general the result should be the same if the frames are attached differently to the links as long as every link is considered. In the DH convention four different parameters afe used in order to attach frames to the robot links. The frame of the link i+1 is determined based on the frame of the link i. The placement of a frame is visualized in figure \ref{fig:Denavit_Hartenberg_Konvention_Rules}. The followinfg consecutive rules are applied:
 
 \begin{itemize}
   \item[1] \(z_{i}\) alligns with the rotational axis of joint i+1
@@ -124,13 +124,13 @@ Having the four parameters \(a_{i}\), \(d_{i}\), \(\alpha_{i}\), \(\vartheta_{i}
 \cite{Siciliano2009}
 
 \section{Task 2}
-The modified DH convention presented in \cite{Lynch2017} differs to the original DH presented in \cite{Siciliano2009}. The frames are attached to the links differntly (see table \ref{table:frame_attachment_DH}). Getting the DH parameters from the attached frames therefore also differs (see table \ref{table:DH_parameters}). Like mentioned before the attachment of the frames does not change the forward dynamics. Anyway, sticking with one convention makes calculatations more intuitive and easier to understand for others.
+The modified DH convention presented in \cite{Lynch2017} differs to the original DH presented in \cite{Siciliano2009}. In figure \ref{fig:Denavit_Hartenberg_Konvention_Rules_modified} The frames are attached to the links differntly (see table \ref{table:frame_attachment_DH}). Getting the DH parameters from the attached frames therefore also differs (see table \ref{table:DH_parameters}). Like mentioned before the attachment of the frames does not change the forward dynamics. Anyway, sticking with one convention makes calculatations more intuitive and easier to understand for others.
 
 \begin{figure}
   \centering
   \includegraphics[width=0.8\textwidth]{assets/Denavit_Hartenberg_Convention_Rules_Modified.pdf} 
   \caption{Modified Denavit Hartenberg convention rules \cite{Lynch2017}}
-  \label{fig:Denavit_Hartenberg_Konvention_Rules}
+  \label{fig:Denavit_Hartenberg_Konvention_Rules_modified}
 \end{figure}
 
 In the following passage the differences in the frame attachement are presented.
@@ -162,6 +162,79 @@ In the following passage the differences in the frame attachement are presented.
   \caption{DH parameter original versus modified DH}
   \label{table:DH_parameters}
 \end{table}
+
+In the special case where two consecutive \(z_{i}\) and \(z_{i-1}\) intersect \cite{Lynch2017} recommends to pick a \(x_{i-1}\) which is perpendicular to the plane spanned by \(z_{i}\) and\(z_{i-1}\). \cite{Siciliano2009} just says that an arbitrary \(x_{i}\) should be picked.
+
+
+\section{Task 3}
+
+\subsection{Twist}
+Rigid body motions can be expressed by consecutively applying a rotation and translation on a body. So called twists which use rotations around a srew axis and translation along the screw axis can also be used to represent rigid body motions. The screw axis \(S\) can be represented by three parameters \(q, \hat{s}, h\), where \(q\) is any point on the screw axis, \(\hat{s}\) is the unit vector representing the screw axis and \(h\) is the screw pitch, which deifines the ratio of linear and angular velocity. Figure \ref{fig:Twist} shows:
+\begin{itemize}
+  \item[-] angular velocity \(\dot{\theta}\) which rotates the coordinate frame around the screw axis
+  \item[-] the angular speed due to the angualar velocity: \(\dot{\theta}\): -\( \hat{s} \dot{\theta} \times q \)
+  \item[-] the linear speed due to the screw pitch \(h\): \( h \hat{s} \dot{\theta} \)
+\end{itemize}
+
+The twist can than be written as:
+\[
+V
+=
+\begin{bmatrix}
+  w \\
+  v
+\end{bmatrix}
+=
+\begin{bmatrix}
+  \hat{s} \dot{\theta}\\
+  - \hat{s} \dot{\theta} \times q + h \hat{s} \dot{\theta}
+\end{bmatrix}
+\]
+Instead of representing the screw axis with \(q, \hat{s}, h\) we can also represent it as a normalized version of any twist. Still the previous example gives a good intuition for twists and screw axis. This will help to understand the PoE formula later in this section. 
+
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{assets/Twist.pdf} 
+  \caption{Screw axis Visualization \cite{Lynch2017}}
+  \label{fig:Twist}
+\end{figure}
+
+\subsection{Exponential Coordinates of Twists}
+Applying the matrix exponential to \( w \dot{\theta}\) the corresponding rotation matrix is generated. Equivalently this works for Twists. Applying the matrix exponential to \( S \theta \in \mathbb{R}^{6} \) we receive the homogenious Transformation \( T\)
+
+\begin{itemize}
+  \item[exp]: \([S] \theta \in se(3) \Rightarrow T \in SE(3)\)
+  \item[log]: \(T \in SE(3) \Rightarrow [S] \theta \in se(3)\)
+\end{itemize}
+
+In the next section the PoE formula is presented for solving the forward kinematics for compelex open chain robots. The homogenious transformations between links is caclulated with the matrix exponential of screw motions. In this sense, it is important to the concept of matrix logarithm and exponential of twists. 
+
+\subsection{Power of Exponentials formulation}
+In comparison to DH convention in the Product of Exponential Formula (POE Formula) there is no convention for attaching a frame to each link. It is just necessary to attach a frame at a stationary point and the end effector. The rotation of each joint i is represented by a screw motion which influences all links between joint i and end effector. When the robot is in its zero position and one does just move the last joint with \(\theta_{n}\), the end effector pose is represented by \(T = e^{[S_{n}]\theta_{n}} M\). In contrast when moving the last two joints \(\theta_{n}\) and \(\theta_{n-1}\), the end effector pose is represented by \(T = e^{[S_{n-1}]\theta_{n-1}} e^{[S_{n}]\theta_{n}} M\). This is what figure \ref{fig:PoE_Visualization} shows. M is a homogenious transformation representing the end effector frame relative to the base frame when the robot is in it's home position. \(S_{i}\) is the screw axis of each joint i when the robot is in its home position This screw axis can be represented in the fixed space frame or end effector frame. The first PoE formula is called spatial form of the Power-of-Exponentials formulations. The second PoE formula is called body form of the Power-of-Exponentials formulations. The homogenious transformation representing the end effector relative to the base frame in the fixed space frame: 
+
+\begin{equation}
+  T = e^{[S_{1}]\theta_{1}} ... e^{[S_{n-1}]\theta_{n-1}} e^{[S_{n}]\theta_{n}} M\
+  \label{eqn:spatial_PoE_formula}
+\end{equation}
+
+The screw motion of a joint i just impacts the pose of the the joints i+1 to end effector frame but not any joint between the base and joint i-1. Therefore, it makes sense that in the formula \ref{eqn:spatial_PoE_formula} the M matrix is first transformed by the the screw motion of the joint n. Using the matrix identity \(e^{M^{-1}PM} = M^{-1}e^{P}M\) we can start to move the M matrix on the right side from formula \ref{eqn:spatial_PoE_formula} to the left side: 
+
+\begin{equation}
+  T = M e^{M^{-1}[S_{1}]M\theta_{1}} ... e^{[M^{-1}[S_{n-1}]M\theta_{n-1}} e^{M^{-1}[S_{n}]M\theta_{n}} \\
+  \label{eqn:body_PoE_formula}
+\end{equation}
+\(M^{-1}[S_{i}]M\) is representing the screw axis of joint i in the end effector frame. The screw motion of joint i impacts all joints between base and joint i-1 but not any joint between joint i+1 and the end effector. Therefore it makes sense, that in formula \ref{eqn:body_PoE_formula} M is first transformed by the screw motion of the joint 1. 
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{assets/PoE_Visualization.pdf} 
+  \caption{Visualization of PoE Formula}
+  \label{fig:PoE_Visualization}
+\end{figure}
+
 
 
 \chapter{Here Comes Chapter 2}
