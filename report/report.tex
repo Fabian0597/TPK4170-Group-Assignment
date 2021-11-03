@@ -107,7 +107,7 @@ The DH convention makes finding the homogenious transformations especially conve
   \item[\(\vartheta{i}\)]:  angle between \(x_{i-1}\) and \(x_{i}\) about \(z_{i-1}\)
 \end{itemize}
 
-The paramters \(a_{i}\) and \(\alpha_{i}\) are constantg and just depend on the geometry of the link i. Non constant is the parameter \(d_{i}\) if joint i is prismatic and the parameter \(\vartheta{i}\) if joint i is rotational.
+The paramters \(a_{i}\) and \(\alpha_{i}\) are constant and just depend on the geometry of the link i. Non constant is the parameter \(d_{i}\) if joint i is prismatic and the parameter \(\vartheta{i}\) if joint i is rotational.
 
 Having the four parameters \(a_{i}\), \(d_{i}\), \(\alpha_{i}\), \(\vartheta_{i}\)one can write down the homogenious transformations T immediatelly: 
 
@@ -235,8 +235,17 @@ The screw motion of a joint i just impacts the pose of the the joints i+1 to end
   \label{fig:PoE_Visualization}
 \end{figure}
 
+\section{Task 4}
+
+\subsection{Relation between DH-convention and PoE formula}
+\subsection{DH-convention vs PoE formula - advantages and disadvanteges}
+In this section we try to elaborate the differences between the DH convention and the PoE formula. Both methods differ in several points and have advantages and disadvantages. The DH convention on the one hand has fixed rules to attach frames to joints. This might sometimes seem to be exhaustig. Especially for complex robots with a lot of links it can become a tedious work. If all frames are attached properly one can easily find the homogenious transormations between all consecutive frames \(T_{1}^{0}\) to \(T_{n}^{n-1}\). Using the DH convention the homogenious transformations is established by using the minimal number of parameters to describe joint movements. The minimal number of parameters in the DH convention are  \(a_{i}, d_{i}, \alpha_{i}, \vartheta{i}\). These DH paramters can be used immediatlly to build the transformation matrix T. Multipling all these matrices returns the Transformation from base to end effector and the forward kinematics is solved. The easy establishment of the transformation matrix with the minimal number of parameters is the biggest advantage of the DH convention. Still there exist different DH conventions for attaching the frames to the links. This might sometimes be confusing. Another disadvatage is that the DH-parameters can become ill-conditioned. Especially in the special cases where consecutive joint axes are parallel or do intersect little changes in the robot geomety can make huge changes in the DH-parameters. Errors in manufacturing, CAD modells or in other areas can therefore lead to bigger problems. 
+
+In contrast to that the PoE does not expect to attach frames at each joint. After deciding for a base and end effector frame and   establishing the M matrix, which defines the homegenious transformation from base to end effector in the robot's home position, one can use the PoE formula to solve the forward kinmetaics. There is a smaller effort when attaching frames to the robot and not a such a problem of ill-conditioned parameters. The interpretation of the joints as screw motion might be more intuitve. Besides that the PoE formula does not differ when using it for prismatic and rotational joints. In the DH convention the parameter \(d_{i}\) for prismatic joints and the parameter \(\vartheta{i}\) for rotational joints are variable. In these cases those DH-paramters are not solely determined by the geometry of the link. This is a disadvantage of the DH-convention. This problem does not appear in the PoE formula where prismatic and rotational joints are treated equally. Still, in the PoE-formula it might be more effort to establish the screw axis and applying the matrix exponential. When using a computer this disadvantage might be irrelevant. Besides that the PoE formula does not work with a minimal number of parameters. 
 
 
+
+The PoE formula on the other hand does not expect frames to be attached to each link. 
 \chapter{Here Comes Chapter 2}
 
 \Blindtext

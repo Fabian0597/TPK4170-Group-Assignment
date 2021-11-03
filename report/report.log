@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.4)  3 NOV 2021 13:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.4)  3 NOV 2021 16:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1043,7 +1043,7 @@ chapter 2.
 [3]
 
 pdfTeX warning: pdflatex (file /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/Denavit_Hartenberg_Convention_Rules.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<assets/Denavit_Hartenberg_Convention_Rules.pdf, id=132, 716.6775pt x 454.69875pt>
+<assets/Denavit_Hartenberg_Convention_Rules.pdf, id=138, 716.6775pt x 454.69875pt>
 File: assets/Denavit_Hartenberg_Convention_Rules.pdf Graphic file (type pdf)
 <use assets/Denavit_Hartenberg_Convention_Rules.pdf>
 Package pdftex.def Info: assets/Denavit_Hartenberg_Convention_Rules.pdf  used on input line 82.
@@ -1051,7 +1051,7 @@ Package pdftex.def Info: assets/Denavit_Hartenberg_Convention_Rules.pdf  used on
 [4 </Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/Denavit_Hartenberg_Convention_Rules.pdf>]
 
 pdfTeX warning: pdflatex (file /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/Denavit_Hartenberg_Convention_Rules_Modified.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<assets/Denavit_Hartenberg_Convention_Rules_Modified.pdf, id=146, 849.1725pt x 556.22092pt>
+<assets/Denavit_Hartenberg_Convention_Rules_Modified.pdf, id=152, 849.1725pt x 556.22092pt>
 File: assets/Denavit_Hartenberg_Convention_Rules_Modified.pdf Graphic file (type pdf)
 <use assets/Denavit_Hartenberg_Convention_Rules_Modified.pdf>
 Package pdftex.def Info: assets/Denavit_Hartenberg_Convention_Rules_Modified.pdf  used on input line 131.
@@ -1069,7 +1069,7 @@ Overfull \hbox (60.25061pt too wide) in paragraph at lines 154--162
 [5 </Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/Denavit_Hartenberg_Convention_Rules_Modified.pdf>]
 
 pdfTeX warning: pdflatex (file /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/Twist.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<assets/Twist.pdf, id=161, 825.0825pt x 478.78876pt>
+<assets/Twist.pdf, id=167, 825.0825pt x 478.78876pt>
 File: assets/Twist.pdf Graphic file (type pdf)
 <use assets/Twist.pdf>
 Package pdftex.def Info: assets/Twist.pdf  used on input line 199.
@@ -1077,46 +1077,46 @@ Package pdftex.def Info: assets/Twist.pdf  used on input line 199.
 [6] [7 </Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/Twist.pdf>]
 
 pdfTeX warning: pdflatex (file /Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/PoE_Visualization.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<assets/PoE_Visualization.pdf, id=181, 848.58969pt x 516.3808pt>
+<assets/PoE_Visualization.pdf, id=187, 848.58969pt x 516.3808pt>
 File: assets/PoE_Visualization.pdf Graphic file (type pdf)
 <use assets/PoE_Visualization.pdf>
 Package pdftex.def Info: assets/PoE_Visualization.pdf  used on input line 233.
 (pdftex.def)             Requested size: 318.66953pt x 193.91809pt.
-[8 </Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/PoE_Visualization.pdf>]
+[8 </Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/assets/PoE_Visualization.pdf>] [9] [10
+
+
+]
 chapter 3.
-[9
-
-
-]
-<hovedlogo.png, id=196, 426.8748pt x 141.1674pt>
+[11]
+<hovedlogo.png, id=210, 426.8748pt x 141.1674pt>
 File: hovedlogo.png Graphic file (type png)
 <use hovedlogo.png>
-Package pdftex.def Info: hovedlogo.png  used on input line 246.
+Package pdftex.def Info: hovedlogo.png  used on input line 255.
 (pdftex.def)             Requested size: 227.62209pt x 75.27501pt.
- [10 </Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/hovedlogo.png>]
+ [12 </Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/hovedlogo.png>]
 chapter 4.
-[11
-
-
-]
-File: hovedlogo.png Graphic file (type png)
-<use hovedlogo.png>
-Package pdftex.def Info: hovedlogo.png  used on input line 266.
-(pdftex.def)             Requested size: 227.62209pt x 75.27501pt.
- [12]
-chapter 5.
 [13
 
 
-] [14
+]
+File: hovedlogo.png Graphic file (type png)
+<use hovedlogo.png>
+Package pdftex.def Info: hovedlogo.png  used on input line 275.
+(pdftex.def)             Requested size: 227.62209pt x 75.27501pt.
+ [14]
+chapter 5.
+[15
 
 
-] [15] [16
+] [16
+
+
+] [17] [18
 
 
 ]
 chapter A.
-[17] (/Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/report.aux)
+[19] (/Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/report.aux)
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'report.run.xml'.
@@ -1124,18 +1124,18 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23263 strings out of 478994
- 440387 string characters out of 5858184
+ 23271 strings out of 478994
+ 440462 string characters out of 5858184
  1362970 words of memory out of 5000000
- 40366 multiletter control sequences out of 15000+600000
+ 40369 multiletter control sequences out of 15000+600000
  449860 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,20n,130p,10708b,2520s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "/Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/report.pdf" (27 pages, 585761 bytes).
+Output written on "/Users/fabiankolb/Documents/Universität/NTNU/Robotics/Group Assignment/TPK4170-Group-Assignment/report/report.pdf" (29 pages, 589787 bytes).
 PDF statistics:
- 348 PDF objects out of 1000 (max. 8388607)
- 288 compressed objects within 3 object streams
- 62 named destinations out of 1000 (max. 500000)
- 138 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 373 PDF objects out of 1000 (max. 8388607)
+ 310 compressed objects within 4 object streams
+ 67 named destinations out of 1000 (max. 500000)
+ 162 words of extra memory for PDF output out of 10000 (max. 10000000)
 
