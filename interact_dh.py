@@ -27,117 +27,95 @@ class DHparam:
 
 # -------------------------------- Denavit-Hartenberg parameters --------------------------------
 
-# Unit of distance = 1 mm
-H1 = 400
-H3 = 35
-L1 = 25
-L2 = 455
-L3 = 420
-L4 = 80
+from constants import H1, H3, L1, L2, L3, L4
 
-# Joint angles
-theta1 = 0
-theta2 = 0
-theta3 = 0
-theta4 = 0
-theta5 = 0
-theta6 = 0
-
-rest_position_dh = [
-    DHparam(-H1,    theta1,             L1, np.pi/2 ), # Frame 0 to 1
-    DHparam(0,      theta2,             L2, 0       ), # Frame 1 to 2
-    DHparam(0,      theta3 - np.pi/2,   H3, np.pi/2 ), # Frame 2 to 3
-    DHparam(-L3,    theta4,             0,  np.pi/2 ), # Frame 3 to 4
-    DHparam(0,      theta5,             0,  -np.pi/2), # Frame 4 to 5
-    DHparam(-L4,    theta6,             0,  0       ), # Frame 5 to 6
+# The joints will be refered to with an index from 0 to 5 instead of 1 to 6. Deal with it
+init_dh = [
+    DHparam(-H1,    0,          L1, np.pi/2 ), # Frame 0 to 1
+    DHparam(0,      0,          L2, 0       ), # Frame 1 to 2
+    DHparam(0,      -np.pi/2,   H3, np.pi/2 ), # Frame 2 to 3
+    DHparam(-L3,    0,          0,  -np.pi/2), # Frame 3 to 4
+    DHparam(0,      0,          0,  np.pi/2 ), # Frame 4 to 5
+    DHparam(-L4,    0,          0,  0       ), # Frame 5 to 6
 ]
-
-# -------------------------------- Constants --------------------------------
-
-# Trihedron and point 3d models
-BASIS = o3d.geometry.TriangleMesh.create_coordinate_frame(size=200)
-
-# Link 3d models
-LINKS = [
-    o3d.geometry.TriangleMesh().create_box(200, 200, 200).translate([-100, -100, -200])
-        .paint_uniform_color([0.2, 0.2, 0.2]).compute_vertex_normals(), # Link 0
-    o3d.geometry.TriangleMesh().create_box(200, 200, 200).translate([-125, 0, -100])
-        .paint_uniform_color([0.8, 0.2, 0.2]).compute_vertex_normals(), # Link 1
-    o3d.geometry.TriangleMesh().create_box(455, 100, 100).translate([-455, -50, -50])
-        .paint_uniform_color([0.4, 0.8, 0.2]).compute_vertex_normals(), # Link 2
-    o3d.geometry.TriangleMesh().create_box(70, 70, 70).translate([-35, -35, -70])
-        .paint_uniform_color([0.2, 0.4, 0.6]).compute_vertex_normals(), # Link 3
-    o3d.geometry.TriangleMesh().create_box(70, 350, 70).translate([-35, 0, -35])
-        .paint_uniform_color([0.9, 0.6, 0.2]).compute_vertex_normals(), # Link 4
-    o3d.geometry.TriangleMesh().create_box(50, 50, 50).translate([-25, -25, -50])
-        .paint_uniform_color([0.5, 0.1, 0.6]).compute_vertex_normals(), # Link 5
-    o3d.geometry.TriangleMesh().create_box(50, 50, 30).translate([-25, -25, 0])
-        .paint_uniform_color([0.7, 0.7, 0.7]).compute_vertex_normals(), # Link 6
-]
-
-NUM_LINKS = len(LINKS)
-NUM_JOINTS = NUM_LINKS - 1
-
-# Global transformation to display things rightside up on screen
-G = np.array([
-    [1, 0, 0, 0],
-    [0, 0, -1, 0],
-    [0, 1, 0, 0],
-    [0, 0, 0, 1]
-])
 
 # -------------------------------- Interactive visualization --------------------------------
 
-def mutate_geometry(dst, src):
-    dst.vertices = src.vertices
-    dst.vertex_normals = src.vertex_normals
-    dst.triangle_normals = src.triangle_normals
+from visualization import MeshCollection
+
+LINK = lambda i: "Link_{}".format(i)
+FRAME = lambda i: "Frame_{}".format(i)
+BASIS_MESH = o3d.geometry.TriangleMesh.create_coordinate_frame(size=200)
 
 class State:
-    def __init__(self, init_dh):
-        self.current_joint = 0
-        self.joint_dh = init_dh
-        self.transformed_frames = [copy(BASIS) for i in range(NUM_LINKS)]
-        self.transformed_links = [copy(LINKS[i]) for i in range(NUM_LINKS)]
+    def __init__(self, init_dh, init_transforms, root_transform, link_meshes):
+        self.num_links = len(link_meshes)
+        self.num_joints = len(init_dh)
+        assert(self.num_links == self.num_joints + 1)
 
-    def update_transformations(self):
+        self.current_joint = 0                  # Joint that is being controlled
+        self.display_frames = True              # Show the frames on screen
+        self.display_robot = True               # Show the robot arm on screen
+        self.joint_dh = init_dh                 # DH parameters of each joints
+        self.init_transforms = init_transforms  # Frames 0 to 6 at resting position
+
+        self.meshes = MeshCollection(root_transform)
+        for i in range(self.num_links):
+            self.meshes.add_mesh(FRAME(i), BASIS_MESH)      # Show the fames 0 to 6
+            self.meshes.add_mesh(LINK(i), link_meshes[i])   # Show the links 0 to 6
+
+        self.do_forward_kinematics() # Solve once to initialize the links positions
+
+    def do_forward_kinematics(self):
         # Compose the transformations along the chain
-        transformations = [np.eye(4)]
-        for dh in self.joint_dh:
-            transformations.append(transformations[-1] @ dh.get_matrix())
+        transformations = [np.eye(4) for i in range(self.num_links)]
+        for i in range(self.num_joints):
+            transformations[i+1] = transformations[i] @ self.joint_dh[i].get_matrix()
 
-        # Modify the transformations
-        for i in range(NUM_LINKS):
-            mutate_geometry(self.transformed_frames[i], copy(BASIS).transform(G @ transformations[i]))
-            mutate_geometry(self.transformed_links[i], copy(LINKS[i]).transform(G @ transformations[i]))
+        # Update the meshes
+        for i in range(self.num_links):
+            T_0i = transformations[i] # Change of frame from i to 0
+            inv_M_0i = np.linalg.inv(self.init_transforms[i]) # Inverse of T_0i at resting position
+            self.meshes.set_transform(FRAME(i), T_0i)
+            self.meshes.set_transform(LINK(i), T_0i @ inv_M_0i)
 
-    def switch_joint_callback(self, joint):
-        def switch_joint_i(_, joint=joint):
-            print("Now controlling joint {}".format(joint))
-            self.current_joint = joint
-            return False
-        return switch_joint_i
+    def switch_joint(self, joint):
+        self.current_joint = joint
+        print("Now controlling joint {}".format(joint+1))
+        return self.meshes.must_update_o3d()
 
-    def change_angle_callback(self, step):
-        def change_angle_x(_, step=step):
-            self.joint_dh[self.current_joint].theta += step
-            print("DH_{}: {}".format(self.current_joint, self.joint_dh[self.current_joint]))
-            self.update_transformations()
-            return True
-        return change_angle_x
+    def change_current_angle(self, step):
+        self.joint_dh[self.current_joint].theta += step
+        self.do_forward_kinematics()
+        print("DH_{}: {}".format(self.current_joint+1, self.joint_dh[self.current_joint]))
+        return self.meshes.must_update_o3d()
 
-state = State(rest_position_dh)
-state.update_transformations()
-callbacks = {
-    265: state.change_angle_callback(np.pi / 32), # UP to increase a joint angle
-    264: state.change_angle_callback(-np.pi / 32) # DOWN to decrease a joint angle  
-}
-callbacks.update({
-    ord('0') + i: state.switch_joint_callback(i) for i in range(NUM_JOINTS) # Number keys to switch joint
-})
+    def toggle_robot_display(self):
+        self.display_robot = not self.display_robot
+        for i in range(self.num_links): self.meshes.set_visibility(LINK(i), self.display_robot)
+        return self.meshes.must_update_o3d()
 
-vis = o3d.visualization.draw_geometries_with_key_callbacks(
-    state.transformed_frames + state.transformed_links,
-    callbacks,
-    width=800, height=600
-)
+    def toggle_frame_display(self):
+        self.display_frames = not self.display_frames
+        for i in range(self.num_links): self.meshes.set_visibility(FRAME(i), self.display_frames)
+        return self.meshes.must_update_o3d()
+
+
+if __name__ == "__main__":
+    from constants import INIT_TRANSFORMS, ROOT_TRANSFORM, LINK_MESHES
+
+    state = State(init_dh, INIT_TRANSFORMS, ROOT_TRANSFORM, LINK_MESHES)
+    callbacks = {
+        265: lambda _ : state.change_current_angle(np.pi / 32),     # Press UP to increase a joint angle
+        264: lambda _ : state.change_current_angle(-np.pi / 32),    # Press DOWN to decrease a joint angle  
+        ord('R'): lambda _ : state.toggle_robot_display(),          # PressR to show or hide the robot
+        ord('F'): lambda _ : state.toggle_frame_display(),          # F to show or hide the frames
+    }
+    callbacks.update({
+        # Press the number keys to switch joint
+        ord('1') + i: lambda _, i=i : state.switch_joint(i) for i in range(state.num_joints)
+    })
+
+    vis = o3d.visualization.draw_geometries_with_key_callbacks(
+        state.meshes.get_meshes(), callbacks, width=800, height=600
+    )
